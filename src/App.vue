@@ -7,12 +7,13 @@ import HelloWorld from './components/HelloWorld.vue'
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
+    <div class="wrapper mt-3 m-20">
       <HelloWorld msg="You !" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <i class="t2icon t2ico-wallet"></i>
       </nav>
     </div>
   </header>
