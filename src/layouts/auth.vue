@@ -1,10 +1,13 @@
 <template>
-  <h1>Auth Layout</h1>
+  <navi-brand />
   <slot />
 </template>
 
 <script>
+import NaviBrand from '@/components/NaviBrand.vue'
+
 export default {
-  name: 'AuthLayout'
+  name: 'AuthLayout',
+  components: { NaviBrand }
 }
 </script>

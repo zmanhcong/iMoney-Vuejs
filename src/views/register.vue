@@ -1,7 +1,6 @@
 <template>
   <div class="mt-8 container">
     <div class="flex flex-col mx-auto px-8">
-      <h1 class="text-center text-2xl font-medium">Best way to saving your Money!</h1>
       <form class="mt-8" action="" @submit.prevent="onSubmit">
         <div class="row flex flex-col">
           <label class="text-gray-500 font-medium" for="">Full Name</label>
