@@ -5,7 +5,9 @@
         <div class="row flex flex-col mt-6">
           <label class="text-gray-500 font-medium" for="">Email Address</label>
           <input
-            type="text"
+            type="email"
+            id="email"
+            autocomplete="on"
             class="border border-black h-9 rounded-md p-4 font-medium"
             placeholder="Input email address"
             v-model="email"
@@ -17,6 +19,7 @@
             type="password"
             class="border border-black h-9 rounded-md p-4 font-medium"
             placeholder="Input Password"
+            autocomplete="on"
             v-model="password"
           />
         </div>
@@ -46,6 +49,7 @@
 <script>
 import { ref } from 'vue'
 import { useLogin } from '@/hooks/useLogin'
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'RegisterPage',
@@ -55,12 +59,14 @@ export default {
     const password = ref('')
 
     const { isPending, error, login } = useLogin()
+    const router = useRouter()
 
     async function onSubmit() {
       if (!isPending.value) {
         await login(email.value, password.value)
         if (!error.value) {
           console.log('Login successfully')
+          router.push({ name: 'home', params: {} })
         } else {
           console.error('Login failed', error.value)
         }

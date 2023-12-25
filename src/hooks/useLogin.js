@@ -5,6 +5,7 @@ import { ref } from 'vue'
 export function useLogin() {
   const error = ref(null)
   const isPending = ref(false)
+  const userInfo = ref('')
 
   async function login(email, password) {
     isPending.value = true
@@ -14,6 +15,7 @@ export function useLogin() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password)
       error.value = null
       isPending.value = false
+      userInfo.value = userCredential.user
       return userCredential
     } catch (err) {
       console.error('Login error', err.message)
@@ -32,5 +34,5 @@ export function useLogin() {
       isPending.value = false
     }
   }
-  return { login, error, isPending }
+  return { login, error, userInfo, isPending }
 }

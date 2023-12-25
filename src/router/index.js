@@ -9,7 +9,7 @@ const router = createRouter({
       meta: {
         layout: 'default'
       },
-      component: () => import(/* webpackChunkName: "home" */ '../views/index.vue')
+      component: () => import(/* webpackChunkName: "home" */ '../views/HomePage.vue')
     },
     {
       path: '/register',
